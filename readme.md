@@ -68,6 +68,12 @@ Disconnect all clients
 java -jar chat-socket.jar --method=client --port=8000
 ```
 
+##### Commands
+Set a new username
+```
+!username [new_username]
+```
+
 #### Both
 Close application
 ```
