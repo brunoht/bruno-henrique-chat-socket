@@ -36,10 +36,11 @@ on every change
 if there's another client using the same name
 
 ## Instructions
-
 ### Installation
+//
 
 ### Configuration
+//
 
 ### Running
 #### Server
