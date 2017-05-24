@@ -45,7 +45,7 @@ if there's another client using the same name
 ### Running
 #### Server
 ```
-java -jar chat-socket.jar --method=server --port=8000
+java -jar chat-socket.jar --mode=server --port=8000
 ```
 
 ##### Commands
@@ -66,7 +66,7 @@ Disconnect all clients
 
 #### Clients
 ```
-java -jar chat-socket.jar --method=client --port=8000
+java -jar chat-socket.jar --mode=client --port=8000
 ```
 
 ##### Commands
