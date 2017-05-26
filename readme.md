@@ -15,9 +15,21 @@ using TCP protocol.
     * CLI - YES - Command Line Interface
     * GUI - NO  - Graphic User Interface
     * WEB - NO  - Web User Interface
+    
+### Core Details
+
+#### Layers Hierarchy
+* ChatSocketApplication   -   Where the application starts
+* Application             -   Register de dependency injections. Implements the method responsible for 
+                            initializate the application 
+* Routes                  -   Register the routes
+* Controllers             -   Implement business rules and application logic
+* Services                -   Implement the methods that will execute actions and functions
+* Models                  -   Classes of object models
+
 
 ### Specification
-#### Server
+#### domain.Server
 * Send a welcome message when user enters (connects) de chat
 * Allows up to 10 connections simultaneously
 * Receives a client message e send to all connected clients
@@ -29,7 +41,7 @@ Data, Time, Username to the message
 on every change
 * Allows to kick individual or all connected clients
 
-#### Client
+#### domain.Client
 * Send message to all connected users
 * Defines an automatically name for the connected client
 * Allows users change its own name, but validate it checking 
@@ -43,7 +55,7 @@ if there's another client using the same name
 //
 
 ### Running
-#### Server
+#### domain.Server
 ```
 java -jar chat-socket.jar --mode=server --port=8000
 ```
