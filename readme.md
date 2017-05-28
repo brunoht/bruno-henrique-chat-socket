@@ -108,6 +108,11 @@ Close connection and finish client application
 !close
 ```
 
+You can also finish application in Portuguese
+```
+FIM
+```
+
 Close all connections and finish server application
 ```
 !close-server

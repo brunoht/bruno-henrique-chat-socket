@@ -7,6 +7,7 @@ public class ClientCommandHandler {
      */
     public void handler(String message){
         switch (message){
+            case "FIM":
             case "!close":
                 close();
                 break;
