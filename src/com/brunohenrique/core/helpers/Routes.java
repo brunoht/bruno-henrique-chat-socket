@@ -13,10 +13,10 @@ public class Routes {
     public void call(String routeName, String[] args) {
         switch (routeName){
             case "server":
-                Server.app();
+                serverController.app(args);
                 break;
             case "client":
-                clientController.run();
+                clientController.app(args);
                 break;
         }
     }

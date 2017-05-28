@@ -55,17 +55,16 @@ if there's another client using the same name
 //
 
 ### Running
-#### domain.Server
+#### Server
 ```
-java -jar chat-socket.jar --mode=server --port=8000
+// Sintax:
+java -jar chat-socket.jar server [portNumber]
+
+// Example:
+java -jar chat-socket.jar server 8000
 ```
 
 ##### Commands
-Kick a client by its ID
-```
-!kick [id]
-```
-
 Kick a client by username
 ```
 !kick [username]
@@ -78,7 +77,11 @@ Disconnect all clients
 
 #### Clients
 ```
-java -jar chat-socket.jar --mode=client --port=8000
+// Sintax:
+java -jar chat-socket.jar client [address] [portNumber] [username]
+
+// Example:
+java -jar chat-socket.jar client localhost 8000 myname
 ```
 
 ##### Commands
@@ -87,8 +90,12 @@ Set a new username
 !username [new_username]
 ```
 
-#### Both
-Close application
+Close connection and finish client application
 ```
 !close
+```
+
+Close all connections and finish server application
+```
+!close-server
 ```
