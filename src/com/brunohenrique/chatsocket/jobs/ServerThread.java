@@ -3,6 +3,7 @@ package com.brunohenrique.chatsocket.jobs;
 import com.brunohenrique.chatsocket.models.Client;
 import com.brunohenrique.chatsocket.models.Server;
 import com.brunohenrique.chatsocket.services.ServerServices;
+import com.brunohenrique.chatsocket.services.handlers.ServerCommandHandler;
 import com.brunohenrique.core.Application;
 
 import java.io.*;
@@ -11,6 +12,7 @@ import java.net.SocketException;
 public class ServerThread extends Thread {
 
     ServerServices serverServices = Application.serverServices;
+    ServerCommandHandler serverCommandHandler = Application.serverCommandHandler;
 
     String inputLine, message;
 
@@ -35,6 +37,7 @@ public class ServerThread extends Thread {
 
             // Send message
             while ((inputLine = in.readLine()) != null) {
+                serverCommandHandler.handler(inputLine);
                 message = client.getUsername() + ": " + inputLine;
                 sendMessage(message);
             }

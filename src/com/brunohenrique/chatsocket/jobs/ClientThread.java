@@ -1,5 +1,8 @@
 package com.brunohenrique.chatsocket.jobs;
 
+import com.brunohenrique.chatsocket.services.handlers.ClientCommandHandler;
+import com.brunohenrique.core.Application;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 

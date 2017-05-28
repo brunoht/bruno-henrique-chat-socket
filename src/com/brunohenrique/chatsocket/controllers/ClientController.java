@@ -3,6 +3,7 @@ package com.brunohenrique.chatsocket.controllers;
 import com.brunohenrique.chatsocket.jobs.ClientThread;
 import com.brunohenrique.chatsocket.models.Client;
 import com.brunohenrique.chatsocket.models.Server;
+import com.brunohenrique.chatsocket.services.handlers.ClientCommandHandler;
 import com.brunohenrique.core.Application;
 import com.brunohenrique.chatsocket.services.ClientServices;
 
@@ -16,6 +17,7 @@ import java.net.Socket;
 public class ClientController {
 
     ClientServices clientServices = Application.clientServices;
+    ClientCommandHandler clientCommandHandler = Application.clientCommandHandler;
 
     /**
      * Method: run
@@ -42,6 +44,7 @@ public class ClientController {
 
             // Send message
             while ((userInput = stdIn.readLine()) != null) {
+                clientCommandHandler.handler(userInput);
                 out.println(userInput);
             }
 

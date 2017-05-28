@@ -19,40 +19,53 @@ using TCP protocol.
 ### Core Details
 
 #### Layers Hierarchy
+
 * ChatSocketApplication   -   Where the application starts
 * Application             -   Register de dependency injections. Implements the method responsible for 
                             initializate the application 
 * Routes                  -   Register the routes
 * Controllers             -   Implement business rules and application logic
+* Handlers                -   These are middleware classes that intermediates Controllers and Services to 
+                              execute background commands like the one to close application. It receives
+                              a user input from terminal and check if is a command or just a message. If it is
+                              a command, executes the command, if not it just shows the message on clients
 * Services                -   Implement the methods that will execute actions and functions
 * Models                  -   Classes of object models
 
 
 ### Specification
-#### domain.Server
+#### Server
 * Send a welcome message when user enters (connects) de chat
-* Allows up to 10 connections simultaneously
+* Allows unlimited simultaneous connections
 * Receives a client message e send to all connected clients
 * When sending a receive message to all users, it must concatenate
-Data, Time, Username to the message
+Username to the message
 * Threads every incoming message as an individual event and allows
  multiple messages at the same time
-* count the number of active connections and print it on console
-on every change
 * Allows to kick individual or all connected clients
 
-#### domain.Client
+#### Client
 * Send message to all connected users
-* Defines an automatically name for the connected client
-* Allows users change its own name, but validate it checking 
-if there's another client using the same name
+* Allows users choose its own name when connecting to the server
 
 ## Instructions
-### Installation
-//
+### Download
+#### From Github
+* Access https://github.com/brunoht/bruno-henrique-chat-socket or download it directly from
+https://github.com/brunoht/bruno-henrique-chat-socket/archive/master.zip
+* Once you have the source code you must build your application
+    * using IntelliJ IDEA IDE: https://www.jetbrains.com/help/idea/2017.1/working-with-artifacts.html
+    * using Eclipse IDE: https://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftasks-35.htm
+    * using Java CLI: https://docs.oracle.com/javase/tutorial/deployment/jar/build.html
+    
+#### From Repository
+https://sites.google.com/a/lohl.com.br/repository/chat-socket
 
-### Configuration
-//
+### Installation
+After downloading or building chat-socket.jar place this file on:
+```
+c:/chat
+```
 
 ### Running
 #### Server
@@ -65,12 +78,12 @@ java -jar chat-socket.jar server 8000
 ```
 
 ##### Commands
-Kick a client by username
+Kick a client by username (not implemented yet)
 ```
 !kick [username]
 ```
 
-Disconnect all clients
+Disconnect all clients (not implemented yet)
 ```
 !kick all
 ```
@@ -85,7 +98,7 @@ java -jar chat-socket.jar client localhost 8000 myname
 ```
 
 ##### Commands
-Set a new username
+Set a new username (not implemented yet)
 ```
 !username [new_username]
 ```
@@ -99,3 +112,6 @@ Close all connections and finish server application
 ```
 !close-server
 ```
+
+## References
+https://docs.oracle.com/javase/tutorial/networking/TOC.html

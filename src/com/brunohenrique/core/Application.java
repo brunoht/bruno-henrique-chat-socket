@@ -4,6 +4,8 @@ import com.brunohenrique.chatsocket.controllers.ClientController;
 import com.brunohenrique.chatsocket.controllers.ServerController;
 import com.brunohenrique.chatsocket.services.ClientServices;
 import com.brunohenrique.chatsocket.services.ServerServices;
+import com.brunohenrique.chatsocket.services.handlers.ClientCommandHandler;
+import com.brunohenrique.chatsocket.services.handlers.ServerCommandHandler;
 import com.brunohenrique.core.helpers.Routes;
 
 public class Application {
@@ -22,6 +24,8 @@ public class Application {
     // SERVICES
     public static ClientServices clientServices = new ClientServices();
     public static ServerServices serverServices = new ServerServices();
+    public static ClientCommandHandler clientCommandHandler = new ClientCommandHandler();
+    public static ServerCommandHandler serverCommandHandler = new ServerCommandHandler();
 
     // CONTROLLERS
     public static ClientController clientController = new ClientController();

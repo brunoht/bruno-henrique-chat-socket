@@ -5,7 +5,7 @@ public class ServerCommandHandler {
     /**
      * Interprets Server commands before showing messages
      */
-    public void handler(String message, String[] args){
+    public void handler(String message){
         message = message.toLowerCase();
         switch (message){
             case "!close-server":
@@ -21,12 +21,15 @@ public class ServerCommandHandler {
     }
 
     private void closeServer(){
-
+        System.out.println("Closing connections");
+        System.out.println("Closing server application");
+        System.out.println("Finished");
+        System.exit(0);
     }
     private void kick(){
-
+        // not implemented yet
     }
     private void kickAll(){
-
+        // not implemented yet
     }
 }
